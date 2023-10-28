@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Temporary Page. Go to a different api-endpoint</h1>
+    <button id="mybt">Submit</button>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        const client_id = "ZwZZSbH9ui1oOREzGw2eKa6NPqnB4TkS7TjblVgt"
+        const redirect_uri = "http://127.0.0.1:8000/auth/callback"
+        $("#mybt").click(function () {
+            $.ajax({
+                url: "http://www.channeli.in/oauth/authorise", // Replace with your actual API endpoint
+                type: "GET",
+                data : {
+                    'client_id' :  client_id,
+                    'redirect_uri': redirect_uri,
+                    'state': "success",
+                },
+                success: function (data) {
+                    // Handle the data received from the backend
+                    console.log('Request Successful')
+                },
+                error: function (xhr, status, error) {
+                    // Handle the error
+                    console.error("Error:", error);
+                }
+            });
+        });
+    });
+</script>
+</html>

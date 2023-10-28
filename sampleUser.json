@@ -1,0 +1,38 @@
+{
+    "userId":19265,
+    "username":"22119045",
+    "person":{
+        "shortName":"",
+        "fullName":"Sajal Chauhan",
+        "roles":[
+            {
+                "role":"Student",
+                "activeStatus":"ActiveStatus.IS_ACTIVE"
+            }
+        ],
+        "customRoles":[
+            
+        ],
+        "displayPicture":"None"
+    },
+    "student":{
+        "enrolmentNumber":"22119045",
+        "branch name":"B.Tech. (Production and Industrial Engineering)",
+        "currentYear":2,
+        "currentSemester":3,
+        "startDate":"2022-10-27",
+        "endDate":"None",
+        "branch degree name":"B.Tech. - Bachelor of Technology",
+        "branch department name":"Mechanical and Industrial Engineering Department"
+    },
+    "contactInformation":{
+        "emailAddress":"sajalchauhan2004@gmail.com",
+        "emailAddressVerified":false,
+        "instituteWebmailAddress":"sajal_c@me.iitr.ac.in",
+        "primaryPhoneNumber":"8700249528",
+        "secondaryPhoneNumber":"9717593466"
+    },
+    "socialInformation":{
+        
+    }
+}
