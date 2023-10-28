@@ -3,11 +3,28 @@ from .models import Post
 from .serializers import PostSerializer
 from authentication.models import User
 from rest_framework.response import Response
+from rest_framework.decorators import api_view
+from rest_framework.views import APIView
 
 class PostList(generics.ListAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
     permission_classes = [permissions.IsAuthenticated]
+
+# @api_view(['GET'])
+# def getclubposts(request, *args, **kwargs):
+#     club_username = request.data['username']
+#     posts = Post.objects.get(username=club_username)
+#     serializer = PostSerializer(data=posts)
+#     return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+class UserPostsView(APIView):
+    def get(self, request, username):
+        posts = Post.objects.filter(user__username=username)
+        serializer = PostSerializer(posts, many=True)
+        return Response(serializer.data)
+    
 
 # PostCreate working => only clubs can create, users cannot. Media is stored as url 
 class PostCreate(generics.CreateAPIView):

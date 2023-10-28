@@ -34,7 +34,7 @@ urlpatterns = [
     path('club/login/', views.ClubLoginView.as_view()),
 
     path('api/', include('authentication.urls')),
-    path('api/', include('feed.urls')),
+    path('info/', include('feed.urls')),
     path('info/',include('features.urls') ),
     path('book/',include("bookingsystem.urls")),
     
