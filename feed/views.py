@@ -5,11 +5,14 @@ from authentication.models import User
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework.views import APIView
+import os
+import json
+from django.conf import settings
+
 
 class PostList(generics.ListAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
-    permission_classes = [permissions.IsAuthenticated]
 
 # @api_view(['GET'])
 # def getclubposts(request, *args, **kwargs):
@@ -41,3 +44,35 @@ class PostCreate(generics.CreateAPIView):
             return Response(serializer.errors, status=status.HTTP_403_FORBIDDEN)
         
         return Response("Forbidden: Only users with user_type='club' can create posts.", status=status.HTTP_403_FORBIDDEN)
+
+# Get the path to your project's base directory
+base_dir = settings.BASE_DIR
+
+# Construct the path to the cache.json file
+cache_file_path = os.path.join(base_dir, 'feed', 'cache', 'cache.json')
+reg_file_path = os.path.join(base_dir, 'feed', 'cache', 'reg.json')
+clubpost_file_path = os.path.join(base_dir, 'feed', 'cache', 'post.json')
+
+with open(cache_file_path, 'r') as file:
+    cacheData = json.load(file)
+
+with open(reg_file_path, 'r') as file:
+    regData = json.load(file)
+
+with open(clubpost_file_path, 'r') as file:
+    clubData = json.load(file)
+    
+
+class CheckPost(APIView):
+    def get(self, request):
+        return Response(cacheData) 
+
+
+class RegPost(APIView):
+    def get(self, request):
+        return Response(regData)
+
+
+class ClubPost(APIView):
+    def get(self, request):
+        return Response(clubData)

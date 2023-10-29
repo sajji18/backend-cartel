@@ -112,10 +112,10 @@ class OauthCallback(APIView):
                 userId = existing_user.user_id
                 userName = existing_user.username
                 
-                response = HttpResponseRedirect('http://localhost:3000/?auth_token=' + authToken + '&userid=' + str(userId) + '&username=' + userName)  
+                response = HttpResponseRedirect('http://localhost:3000/home')  
                 return response #Change URL to /home
         
-        return redirect('/')
+        return redirect('http://localhost:3000/home')
 
 class Logout(APIView):
     def get(self,request):
