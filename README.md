@@ -106,7 +106,7 @@ SmartyPants converts ASCII punctuation characters into "smart" typographic punct
 https://miro.com/app/board/uXjVNVOOMjU=/?share_link_id=395568389059
 
 ## Contributors 
-<a href="https://github.com/sajji18">Sajal Chauhan</a> (Backend)
-<a href="https://github.com/ayushshankaram">Ayush Shankaram</a> (Backend)
-<a href="https://github.com/Themonk20">Parth Shandilya</a> (Design and Frontend)
+* <a href="https://github.com/sajji18">Sajal Chauhan</a> (Backend)
+* <a href="https://github.com/ayushshankaram">Ayush Shankaram</a> (Backend)
+* <a href="https://github.com/Themonk20">Parth Shandilya</a> (Design and Frontend)
 
